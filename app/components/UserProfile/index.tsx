@@ -2,12 +2,16 @@ import Image from "next/image";
 import ProfileImage from "../../assets/profile.png";
 import styles from "./styles.module.scss";
 
-export default function UserProfile() {
+interface IProps {
+  isMyProfile?: boolean;
+}
+
+export default function UserProfile({ isMyProfile }: IProps) {
   return (
     <div className={styles.container}>
       <div className={styles["container--avatar"]}>
         <Image src={ProfileImage} alt="avatar" width={249} height={249} />
-        <div>Meu Perfil</div>
+        {isMyProfile && <div>Meu Perfil</div>}
       </div>
 
       <h1>David Junior</h1>

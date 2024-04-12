@@ -1,8 +1,30 @@
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  justify-content: center;
+  gap: 32px;
+  padding: 0 48px;
+
+  img {
+    margin-top: calc(32px - 14px);
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 14px;
+
+
+    > a {
+      align-self: flex-end;
+      width: 223px;
+    }
+  }
+}
+
+.container-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 16px;
 }
