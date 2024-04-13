@@ -1,33 +1,29 @@
 import Image from "next/image";
-import ProfileImage from "../../assets/profile.png";
 import styles from "./styles.module.scss";
+import { GithubProfileType } from "@/app/types/GithubProfileType";
 
 interface IProps {
   isMyProfile?: boolean;
+  profile: GithubProfileType;
 }
 
-export default function UserProfile({ isMyProfile }: IProps) {
+export default function UserProfile({ isMyProfile, profile }: IProps) {
   return (
     <div className={styles.container}>
       <div className={styles["container--avatar"]}>
-        <Image src={ProfileImage} alt="avatar" width={249} height={249} />
+        <Image src={profile.avatar_url} alt="avatar" width={249} height={249} />
         {isMyProfile && <div>Meu Perfil</div>}
       </div>
 
-      <h1>David Junior</h1>
-      <span>DavidJRRJ</span>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et nemo
-        consequatur illo enim. Facilis ex vitae sint maiores dignissimos! Dolore
-        enim quis perferendis eum recusandae voluptates ipsa soluta architecto
-        quae.
-      </p>
+      <h1>{profile.name}</h1>
+      <span>{profile.login}</span>
+      <p>{profile.bio}</p>
 
       <div className={styles["items-container"]}>
-        <span>@davidjrrj</span>
-        <span>Rio de Janeiro</span>
-        <span>david.lourenco94@gmail.com</span>
-        <span>http://127.0.1</span>
+        <span>{profile.company}</span>
+        <span>{profile.location}</span>
+        <span>{profile.email}</span>
+        <span>{profile.blog}</span>
       </div>
     </div>
   );

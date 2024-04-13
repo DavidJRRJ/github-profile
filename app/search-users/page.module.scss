@@ -50,17 +50,3 @@
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 16px;
 }
-
-.not-found {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 64px;
-
-  color: #555;
-  font-family: var(--font-roboto);
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
